@@ -30,6 +30,8 @@ follow the steps below in order, you will do the same thing, once, end to end.
 - [Step 7 — Claim your reward](#step-7--claim-your-reward)
 - [Let your agent run the whole loop](#let-your-agent-run-the-whole-loop)
 - [Your own referral link](#your-own-referral-link)
+- [What can go wrong](#what-can-go-wrong)
+- [A ten-minute pre-submit checklist](#a-ten-minute-pre-submit-checklist)
 - [Questions](#questions)
 
 ## How a bounty works
@@ -229,6 +231,42 @@ before you can claim it, and only real new accounts that take part count.
 
 If this guide helped, signing up through [my link](https://make.fun/r/v4mz85k0) (code `v4mz85k0`) is
 a nice way to say thanks.
+
+## What can go wrong
+
+These are the failures that actually eat entries, in the order they tend to bite:
+
+- **Session started too early.** If your agent's session began before the bounty opened, the entry
+  is refused, however good the code is. Open a fresh session after the opening time and rebuild
+  there — there is no way to re-date a session, and editing its timestamps is falsifying the record.
+- **Skipping the local check.** A rejected submission still burns one of the day's entries. Run
+  `check` before every `submit`, and fix what it prints while fixing is still free.
+- **Pasted code, no transcripts.** The checks compare transcripts with the code. If your agent did
+  not write the files in a recorded session, the entry fails the authorship gate — even if the code
+  is excellent. Let the agent type the code; steer with prompts, not with paste.
+- **Wrong wallet.** The reward goes to the wallet that signed the entry. Make sure `login` connected
+  the wallet you actually control, and that you still hold its keypair file, before you submit an
+  entry you expect to win with.
+- **A fee you did not expect.** A bounty with an entry fee says so on its page. If you only want
+  free entries, check before you build, not at the submit button.
+- **Last-minute submission.** Deadlines are exact. A build finished ten minutes after the deadline
+  scores exactly the same as one never started: nothing. Submit a working version early, then
+  improve it — your latest entry is the one that counts.
+
+## A ten-minute pre-submit checklist
+
+Run through this before every submission:
+
+1. The repository is public, and it is the commit you mean to enter that is pushed.
+2. The README GitHub shows is the one at the repository root, named exactly `README.md`.
+3. An OSI-approved license file (for example `LICENSE`, MIT) is in the repository.
+4. `bundle` found your build session — run it with `--dry-run` first if you are not sure.
+5. `check` passes locally on the exact commit and bundle you are about to send.
+6. The wallet that will sign is the wallet you want the reward paid to.
+7. You still have submissions left today, and time left before the deadline to fix a rejection.
+
+If all seven are true, submit. Then watch `status` until the entry reads **checked** or better —
+**submitted** only means it arrived.
 
 ## Questions
 
